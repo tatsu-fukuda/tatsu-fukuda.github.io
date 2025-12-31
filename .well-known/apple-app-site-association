@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "7S47M6X6W3.com.tatsu.ActorDemo",
+        "paths": [
+          "/oauth/callback/slack/*"
+        ]
+      }
+    ]
+  }
+}
