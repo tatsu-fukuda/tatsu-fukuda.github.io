@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>ActorDemo OAuth</title>
+  <style>
+    body { font-family: -apple-system, system-ui, sans-serif; padding: 24px; }
+    code { background: #f2f2f2; padding: 2px 6px; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h3>ActorDemo</h3>
+  <p>認証が完了しました。アプリに戻ってこのタブは閉じてください。</p>
+  <p style="color:#666;">（このページはリダイレクト先として使われています）</p>
+
+  <script>
+    // 画面表示用。必須ではないがデバッグに便利。
+    const params = new URLSearchParams(location.search);
+    const code = params.get("code");
+    const state = params.get("state");
+    const error = params.get("error");
+
+    const pre = document.createElement("pre");
+    pre.textContent =
+      "code: " + (code ? "[present]" : "null") + "\n" +
+      "state: " + (state ? state : "null") + "\n" +
+      "error: " + (error ? error : "null") + "\n" +
+      "full url:\n" + location.href;
+    document.body.appendChild(pre);
+  </script>
+</body>
+</html>
