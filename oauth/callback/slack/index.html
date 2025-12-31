@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>認証完了</title>
     <script>
-        // URLパラメータを取得してカスタムURLスキームにリダイレクト
+        // URLパラメータを保持してカスタムURLスキームにリダイレクト
         // パスを中継ページと統一: oauth/callback/slack
         const redirectUrl = `actordemo://oauth/callback/slack?${window.location.search}`;
+        
+        console.log('Redirecting to:', redirectUrl);
         
         // 即座にリダイレクトを試みる
         window.location.href = redirectUrl;
         
         // フォールバック: リダイレクトが失敗した場合のメッセージ
         setTimeout(function() {
-            document.body.innerHTML = '<h1>認証が完了しました</h1><p>アプリに戻ってこのタブを閉じてください。</p>';
+            document.body.innerHTML = '<h1>認証が完了しました</h1><p>アプリに戻ってこのタブは閉じてください。</p><p>アプリが開かない場合は、手動でアプリを開いてください。</p>';
         }, 1000);
     </script>
 </head>
