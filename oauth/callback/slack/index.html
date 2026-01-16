@@ -48,7 +48,7 @@
   </style>
   <script>
     // window.location.search は "?code=...&state=..." のように "?" を含む
-    const redirectUrl = `actordemo://oauth/callback/slack${window.location.search}`;
+    const redirectUrl = `actor://oauth/callback/slack${window.location.search}`;
 
     window.addEventListener('load', function () {
       const link = document.getElementById('redirect-link');
